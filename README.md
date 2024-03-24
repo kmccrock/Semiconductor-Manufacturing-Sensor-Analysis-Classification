@@ -1,7 +1,9 @@
 # Semiconductor-Manufacturing-Sensor-Analysis-Classification
-Semiconductor Manufacturing Sensor Analysis &amp; Classification for the IUPUI Datathon
+
 IUPUI DATATHON 2023-2024
+
 SEMICONDUCTOR MANUFACTURING SENSOR ANALYSIS & CLASSIFICATION
+
 Team: Kyle McCrocklin (kmccrock@iu.edu)
 ___
 
