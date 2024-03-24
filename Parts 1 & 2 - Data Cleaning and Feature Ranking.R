@@ -7,7 +7,7 @@ options(scipen=999) #TURN OFF SCIENTIFIC NOTATION
 #---------------------------------------------------------------------------#
 
 #I READ IN THE SPACE DELIMITED TEXT FILE TO A DATA FRAME THEN SUMMARIZE THE DATA.
-data = read.table("C:\\Users\\kmccr\\OneDrive\\Projects\\CS Club Datathon 2023-2024\\SECOM - Data from a semi-conductor manufacturing process\\secom.data")
+data = read.table("secom.data")
 
 print(paste0("Number of features : ", ncol(data)))
 print(paste0("Number of observations : ", nrow(data)))
@@ -75,7 +75,7 @@ print(paste0("Number of features after removing those with > 5% NA : ", ncol(dat
 #---------------------------------------------------------------------------#
 
 #I READ IN LABELS AND SUMMARIZE
-labels = read.table("C:\\Users\\kmccr\\OneDrive\\Projects\\CS Club Datathon 2023-2024\\SECOM - Data from a semi-conductor manufacturing process\\secom_labels.data")
+labels = read.table("secom_labels.data")
 colnames(labels) = c('LABEL', 'DATE')
 summary(labels)
 
@@ -158,7 +158,7 @@ deltas = deltas[order(deltas$delta_sum, decreasing=TRUE), ]
 head(deltas,50)
 
 #I'LL OUTPUT THIS RANKING TO A CSV FILE.
-write.csv(deltas[2:nrow(deltas),], "C:\\Users\\kmccr\\OneDrive\\Projects\\CS Club Datathon 2023-2024\\FeatureRankingCentralTendencyBased.csv", row.names=TRUE)
+write.csv(deltas[2:nrow(deltas),], "FeatureRankingCentralTendencyBased.csv", row.names=TRUE)
 
 #I'LL CREATE SIDE-BY-SIDE BOX PLOTS FOR THE TOP 5 FEATURES.
 boxplot(fail_df$V60, pass_df$V60, fail_df$V104, pass_df$V104, fail_df$V29, pass_df$V29, fail_df$V349, pass_df$V349, fail_df$V511, pass_df$V511, main="Side-By-Side Box Plot of Features 60, 104, 29, 349, and 511", names = c("V60 Fail", "V60 Pass", "V104 Fail", "V104 Pass", "V29 Fail", "V29 Pass", "V349 Fail", "V349 Pass", "V511 Fail", "V511 Pass"))
@@ -176,4 +176,4 @@ rownames(d_iqr) <- 1:nrow(d_iqr)
 boxplot(fail_df$V96, pass_df$V96, fail_df$V81, pass_df$V81, fail_df$V60, pass_df$V60, fail_df$V65, pass_df$V65, fail_df$V66, pass_df$V66, main="Side-By-Side Box Plot of Features 96, 81, 60, 65, and 66", names = c("V96 Fail", "V96 Pass", "V81 Fail", "V81 Pass", "V60 Fail", "V60 Pass", "V65 Fail", "V65 Pass", "V66 Fail", "V66 Pass"))
 
 #I'LL OUTPUT THIS RANKING TO A CSV FILE.
-write.csv(d_iqr[2:nrow(d_iqr),], "C:\\Users\\kmccr\\OneDrive\\Projects\\CS Club Datathon 2023-2024\\FeatureRankingVarianceBased.csv", row.names=FALSE)
+write.csv(d_iqr[2:nrow(d_iqr),], "FeatureRankingVarianceBased.csv", row.names=FALSE)
